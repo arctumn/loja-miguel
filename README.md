@@ -5,9 +5,9 @@ Loja Miguel is a Reactjs app where you can buy and watch clothes from different 
 
 ## Development Team:
 
-[@davidmanassa] (https://github.com/davidmanassa)
+[@davidmanassa](https://github.com/davidmanassa)
 
-[@arctumn] (https://github.com/arctumn)
+[@arctumn](https://github.com/arctumn)
 
 ## To install this project:
 
