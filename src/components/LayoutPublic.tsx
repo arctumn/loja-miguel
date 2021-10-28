@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import '../index.css';
 import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from '../logo.svg';
 
 const { SubMenu } = Menu;
@@ -40,15 +40,17 @@ function LayoutPublic() {
                     </Menu.Item>
                     <Menu.Item key="2">Homem</Menu.Item>
                     <Menu.Item key="3">Mulher</Menu.Item>
-
                 </Menu>
                 <Menu theme="dark" mode="horizontal" style={{ position: 'absolute', top: 0, right: 0 }}>
-                    <Menu.Item key="2">
-                        <Badge count={5}>
-                            <ShoppingCartOutlined style={{ fontSize: '20px', color: "white" }} />
+                    <Menu.Item key="4">
+                        <SearchOutlined style={{ fontSize: '20px', color: 'white' }} />
+                    </Menu.Item>
+                    <Menu.Item key="5">
+                        <Badge count={5} style={{ backgroundColor: '#2db7f5'}}>
+                            <ShoppingCartOutlined style={{ fontSize: '20px', color: 'white' }} />
                         </Badge>
                     </Menu.Item>
-                    <Menu.Item key="3">
+                    <Menu.Item key="6">
                         <Avatar size="large" icon={<UserOutlined />} />
                     </Menu.Item>
                 </Menu>
