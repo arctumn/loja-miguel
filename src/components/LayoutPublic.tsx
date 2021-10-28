@@ -14,15 +14,15 @@ Pode:
 
 */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import '../index.css';
 import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from '../logo.svg';
-import { ProductPage } from './ItemLayout';
+import PublicHomepage from './PublicHomepage';
+import { setConstantValue } from 'typescript';
 import { Product } from '../shared_interfaces/sharedInterface_product';
+import { ProductPage } from './ItemLayout';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
