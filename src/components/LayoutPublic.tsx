@@ -46,6 +46,11 @@ class LayoutPublic extends React.Component<Props, State> {
         };
     };
 
+    handleClick(event: MouseEvent) {
+        event.preventDefault();
+        console.log(event.detail); // alerts BUTTON
+      };
+
     render() {
 
         let content;
@@ -59,7 +64,7 @@ class LayoutPublic extends React.Component<Props, State> {
             <Layout>
                 <Header className="header">
                     <div className="logo" />
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} onClick={this.handleClick}>
                         <Menu.Item key="1">
                             <img src={logo} className="App-logo" alt="logo" />
                             LOJA MIGUEL
