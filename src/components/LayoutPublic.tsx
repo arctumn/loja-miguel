@@ -18,12 +18,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import '../index.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
+import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import logo from '../logo.svg';
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
+
+const rightStyle = { position: 'absolute', top: 0, right: 0 };
 
 function LayoutPublic() {
     return (
@@ -31,13 +33,24 @@ function LayoutPublic() {
         <Layout>
             <Header className="header">
                 <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
-                        <img src={logo} className="App-logo" alt="logo"/>
+                        <img src={logo} className="App-logo" alt="logo" />
                         LOJA MIGUEL
                     </Menu.Item>
                     <Menu.Item key="2">Homem</Menu.Item>
                     <Menu.Item key="3">Mulher</Menu.Item>
+
+                </Menu>
+                <Menu theme="dark" mode="horizontal" style={{ position: 'absolute', top: 0, right: 0 }}>
+                    <Menu.Item key="2">
+                        <Badge count={5}>
+                            <ShoppingCartOutlined style={{ fontSize: '20px', color: "white" }} />
+                        </Badge>
+                    </Menu.Item>
+                    <Menu.Item key="3">
+                        <Avatar size="large" icon={<UserOutlined />} />
+                    </Menu.Item>
                 </Menu>
             </Header>
             <Content style={{ padding: '0 50px' }}>
