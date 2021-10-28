@@ -21,12 +21,12 @@ import '../index.css';
 import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from '../logo.svg';
-
+import { ProductPage } from './ItemLayout';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
 const rightStyle = { position: 'absolute', top: 0, right: 0 };
-
+const sizes = ["xs","s","m","l"]
 function LayoutPublic() {
     return (
 
@@ -46,7 +46,7 @@ function LayoutPublic() {
                         <SearchOutlined style={{ fontSize: '20px', color: 'white' }} />
                     </Menu.Item>
                     <Menu.Item key="5">
-                        <Badge count={5} style={{ backgroundColor: '#2db7f5'}}>
+                        <Badge count={20} style={{ backgroundColor: '#2db7f5'}}>
                             <ShoppingCartOutlined style={{ fontSize: '20px', color: 'white' }} />
                         </Badge>
                     </Menu.Item>
@@ -85,7 +85,9 @@ function LayoutPublic() {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>
+                    <Content style={{ padding: '0 24px', minHeight: 280 }}>
+                    <ProductPage sizes={sizes}  /> 
+                    </Content>
                 </Layout>
             </Content>
             <Footer style={{ textAlign: 'center' }}> Loja Miguel 2021 </Footer>
