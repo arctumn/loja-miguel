@@ -1,6 +1,6 @@
 export interface Product{
     title?: string,
     price?: number,
-    images?: string[],
+    images: string[],
     sizes: number[] | string[]
 }
