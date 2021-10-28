@@ -1,19 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LayoutPublic from './components/LayoutPublic';
 
 function App() {
   return (
+
+
+
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bora lá
-        </p>
-       <p>
-         PePino DouRado
-       </p>
-      </header>
+      <LayoutPublic />
+
+      
     </div>
   );
 }
