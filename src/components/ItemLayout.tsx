@@ -2,6 +2,7 @@ import { Radio } from 'antd';
 import { useState } from 'react';
 import { Product } from "../shared_interfaces/sharedInterface_product";
 import { Image } from 'antd';
+
 const exampleData = [
     "https://myspringfield.com/dw/image/v2/AAYL_PRD/on/demandware.static/-/Sites-gc-spf-master-catalog/default/dw86b2b32f/images/hi-res/P_823256443D1.jpg?sw=600&sh=900&sm=fit",
     "https://myspringfield.com/dw/image/v2/AAYL_PRD/on/demandware.static/-/Sites-gc-spf-master-catalog/default/dw52e6ef54/images/hi-res/P_823256443D2.jpg?sw=600&sh=900&sm=fit",
@@ -29,30 +30,24 @@ const SizesButtons = (sizes: number[] | string[]) => {
     )
 }
 
-const Splitter = function(array:String[], size:number) {
-    var results = [];
-    while (array.length) {
-      results.push(array.splice(0, size));
-    }
-    return results;
-  }
-const ImageGallery = (images: string[]) => {
-    const size = 2;
-    return Splitter(images,size)
-            .map(row =>{
-                        <Image.PreviewGroup>
-                            {row.map(image => <Image width={200} src={image.toString()}/>)}
-                        </Image.PreviewGroup>
-                      }
-                )
-    
-}
-export const ProductPage: React.FC<Product> = (product:Product) => {
 
+const ImageGallery = (images: string[]) => {
+    return (
+        <Image.PreviewGroup>
+            {images.map(image => <Image width={300} src={image} />)}
+        </Image.PreviewGroup>
+    )
+}
+
+
+
+export const ProductPage: React.FC<Product> = (product:Product) => {
+        //console.log(<div><p>AAAA</p></div>)
     return (
         <div>
             {ImageGallery(exampleData)}
             {SizesButtons(product.sizes)}
+            
         </div>
     )
 }
