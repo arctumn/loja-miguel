@@ -3,4 +3,6 @@ export interface Product{
     price?: number,
     images: string[],
     sizes: number[] | string[]
+    description?: string
+    content?:string
 }

@@ -53,14 +53,18 @@ class LayoutPublic extends React.Component<Props, State> {
     render() {
 
         let content;
-        if (this.state.page == "homepage") {
-            content = <PublicHomepage />;
-        } else if (this.state.page == "showProductMale") {
-            content = <CatalogLayout />
-        } else if (this.state.page == "showProductFemale") {
-            content = <Product_view gender="male" />
-        } else {
-            content = <Product_view gender="male" />
+        switch(this.state.page){
+            case "homepage": {
+                content = <PublicHomepage />
+                break
+            }
+            case "showProduct": {
+                content = <ProductPage {...example_product} /> //<Product_view gender={'male'}/>
+                break
+            }
+            default: {
+               content = <CatalogLayout />// <ProductPage images={example_product.images} sizes={example_product.sizes} />
+            }
         }
 
         return (
@@ -76,10 +80,10 @@ class LayoutPublic extends React.Component<Props, State> {
                             LOJA MIGUEL
                         </Menu.Item>
                         <Menu.Item key="2" onClick={() => this.setState({
-                            page: "showProductMale"
+                            page: "showProduct"
                         })}>Homem</Menu.Item>
                         <Menu.Item key="3" onClick={() => this.setState({
-                            page: "showProductFemale"
+                            page: "showProduct"
                         })}>Mulher</Menu.Item>
                     </Menu>
                     <Menu theme="dark" mode="horizontal" style={{ position: 'absolute', top: 0, right: 0 }}>

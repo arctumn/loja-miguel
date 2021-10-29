@@ -1,4 +1,4 @@
-import { Layout, Radio } from 'antd';
+import { Divider, Layout, Radio } from 'antd';
 import { useState } from 'react';
 import { Product } from "../shared_interfaces/sharedInterface_product";
 import { Image, Row, Col } from 'antd';
@@ -33,7 +33,7 @@ const ImageGallery: React.FC<Image_values> = (images) => {
 
     return (
         <Image.PreviewGroup>
-            {images.images.map(image => <Image width={300} src={image} />)}
+            {images.images.map(image => <Image width={600} src={image} />)}
         </Image.PreviewGroup>
     )
 }
@@ -45,11 +45,19 @@ export const ProductPage: React.FC<Product> = (product: Product) => {
     return (
 
         <Row>
-            <Col span={20}>
+            <Col span={18}>
                 <ImageGallery images={product.images} />
             </Col>
-            <Col span={4}>
+            <Col span={5}>
+                <h1 style={{textAlign:"left"}}>{product.title}</h1>
+                <h3 style={{textAlign:"left"}}>{"Price: "+product.price}</h3>
+                <Divider />
+                <h3 style={{textAlign:"left"}}>{product.description}</h3>
+                <Divider />
                 {SizesButtons(product.sizes)}
+                <Divider />
+                <p style={{textAlign:"justify"}}>{product.content}</p>
+                
             </Col>
         </Row>
 
