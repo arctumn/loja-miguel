@@ -24,6 +24,7 @@ import { setConstantValue } from 'typescript';
 import { ProductPage } from './ItemLayout';
 import { example_product } from '../example_data/example_Data';
 import React from 'react';
+import ProductListening from './ProductListening';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -34,7 +35,8 @@ interface Props {
 }
 
 interface State {
-    gender: string
+    gender: string,
+    filters: string
 }
 
 class CatalogLayout extends React.Component<Props, State> {
@@ -44,7 +46,8 @@ class CatalogLayout extends React.Component<Props, State> {
         super(props);
 
         this.state = {
-            gender: "male"
+            gender: "male1",
+            filters: ""
         };
     };
 
@@ -53,6 +56,8 @@ class CatalogLayout extends React.Component<Props, State> {
         let content;
         if (this.state.gender == "male") {
             content = <ProductPage images={example_product.images} sizes={example_product.sizes} />
+        } else {
+            content = <ProductListening />
         }
 
         return (
