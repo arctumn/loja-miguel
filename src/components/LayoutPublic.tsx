@@ -25,6 +25,7 @@ import { ProductPage } from './ItemLayout';
 import { example_product } from '../example_data/example_Data';
 import React from 'react';
 import CatalogLayout from './CatalogLayout';
+import { Product_view } from './Products-view';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -54,8 +55,12 @@ class LayoutPublic extends React.Component<Props, State> {
         let content;
         if (this.state.page == "homepage") {
             content = <PublicHomepage />;
-        } else if (this.state.page == "showProduct") {
+        } else if (this.state.page == "showProductMale") {
             content = <CatalogLayout />
+        } else if (this.state.page == "showProductFemale") {
+            content = <Product_view gender="male" />
+        } else {
+            content = <Product_view gender="male" />
         }
 
         return (
@@ -71,10 +76,10 @@ class LayoutPublic extends React.Component<Props, State> {
                             LOJA MIGUEL
                         </Menu.Item>
                         <Menu.Item key="2" onClick={() => this.setState({
-                            page: "showProduct"
+                            page: "showProductMale"
                         })}>Homem</Menu.Item>
                         <Menu.Item key="3" onClick={() => this.setState({
-                            page: "showProduct"
+                            page: "showProductFemale"
                         })}>Mulher</Menu.Item>
                     </Menu>
                     <Menu theme="dark" mode="horizontal" style={{ position: 'absolute', top: 0, right: 0 }}>
