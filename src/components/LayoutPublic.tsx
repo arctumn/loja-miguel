@@ -25,6 +25,7 @@ import { ProductPage } from './ItemLayout';
 import { example_product } from '../example_data/example_Data';
 import React from 'react';
 import CatalogLayout from './CatalogLayout';
+import { Product_view } from './Products-view';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -52,10 +53,18 @@ class LayoutPublic extends React.Component<Props, State> {
     render() {
 
         let content;
-        if (this.state.page == "homepage") {
-            content = <PublicHomepage />;
-        } else if (this.state.page == "showProduct") {
-            content = <CatalogLayout />
+        switch(this.state.page){
+            case "homepage": {
+                content = <PublicHomepage />
+                break
+            }
+            case "showProduct": {
+                content = <ProductPage {...example_product} /> //<Product_view gender={'male'}/>
+                break
+            }
+            default: {
+               content = <CatalogLayout />// <ProductPage images={example_product.images} sizes={example_product.sizes} />
+            }
         }
 
         return (
