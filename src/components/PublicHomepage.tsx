@@ -18,7 +18,7 @@ const contentStyle = {
 
 function PublicHomepage() {
   return (
-    <Content style={{ padding: '0 50px'  }}>
+    <Content style={{ padding: '0 0px'  }}>
     <Carousel autoplay>
       <div>
         <h3 style={contentStyle}>
