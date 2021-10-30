@@ -1,10 +1,10 @@
 import { Product } from "../shared_interfaces/sharedInterface_product"
-import img1 from "./img/banner1.jpg"
-import img2 from "./img/banner2.jpg"
-import img3 from "./img/banner3.jpg"
-import img4 from "./img/banner4.jpg"
+//import img1 from "./img/banner1.jpg"
+//import img2 from "./img/banner2.jpg"
+//import img3 from "./img/banner3.jpg"
+//import img4 from "./img/banner4.jpg"
 const sizes = ["xs","s","m","l"]
-const exampleData = [img1,img2,img3,img4]
+// const exampleData = [img1,img2,img3,img4]
 const exampleData2 = [
     "https://myspringfield.com/dw/image/v2/AAYL_PRD/on/demandware.static/-/Sites-gc-spf-master-catalog/default/dwe4bde745/images/hi-res/P_823256443FM.jpg?sw=600&sh=900&sm=fit",
     "https://myspringfield.com/dw/image/v2/AAYL_PRD/on/demandware.static/-/Sites-gc-spf-master-catalog/default/dw5a5bf3c0/images/hi-res/P_823256443TM.jpg?sw=600&sh=900&sm=fit",

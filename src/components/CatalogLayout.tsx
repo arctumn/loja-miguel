@@ -16,19 +16,19 @@ Pode:
 
 import 'antd/dist/antd.css';
 import '../index.css';
-import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
-import logo from '../logo.svg';
-import PublicHomepage from './PublicHomepage';
-import { setConstantValue } from 'typescript';
+import { Layout, Menu, Breadcrumb} from 'antd';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+//import logo from '../logo.svg';
+//import PublicHomepage from './PublicHomepage';
+//import { setConstantValue } from 'typescript';
 import { ProductPage } from './ItemLayout';
 import { example_product } from '../example_data/example_Data';
 import React from 'react';
 import ProductListening from './ProductListening';
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const {  Content, Sider } = Layout;
 
-const rightStyle = { position: 'absolute', top: 0, right: 0 };
+//const rightStyle = { position: 'absolute', top: 0, right: 0 };
 
 
 interface Props {
@@ -54,7 +54,7 @@ class CatalogLayout extends React.Component<Props, State> {
     render() {
 
         let content;
-        if (this.state.gender == "male") {
+        if (this.state.gender === "male") {
             content = <ProductPage images={example_product.images} sizes={example_product.sizes} />
         } else {
             content = <ProductListening />

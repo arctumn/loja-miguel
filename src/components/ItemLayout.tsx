@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Product } from "../shared_interfaces/sharedInterface_product";
 import { Image, Row, Col } from 'antd';
 import "./Button.css";
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer } = Layout;
 
 
 
@@ -39,15 +39,16 @@ const ImageGallery: React.FC<Image_values> = (images) => {
     )
 }
 const isHidden = (elm: HTMLElement | null) => {
-    if (elm === null) return false;
+    if (elm === null) return '0px';
     var rect = elm.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return (rect.bottom < 0 || rect.top - viewHeight >= 0);
+    return (rect.bottom < 0 || rect.top - viewHeight >= 0) ? '0px' :'-200px';
 }
 
 export const ProductPage: React.FC<Product> = (product: Product) => {
     //console.log(<div><p>AAAA</p></div>)
-    const [visibility, setVisibility] = useState(false)
+    
+    const [visibility, setVisibility] = useState('-200px')
     return (
 
         <Row onWheel={() => { setVisibility(isHidden(document.getElementById('cart'))) }}>
@@ -70,28 +71,18 @@ export const ProductPage: React.FC<Product> = (product: Product) => {
                 <p style={{ textAlign: "justify" }}>{product.content}</p>
 
             </Col>
-            <Footer style=
-                {visibility ? {
-                    
+
+            <Footer  style=
+                {{
                     visibility: 'visible',
                     borderTop: '1px solid #e8e8e8',
-                    position: 'fixed',
+                    position:  'fixed',
                     left: 0,
-                    bottom: 0,
+                    bottom: visibility,
                     width: '100%',
                     textAlign: 'center',
-                    display: 'flex'
-                    } : {
-                    
-                    visibility: 'hidden',
-                    borderTop: '1px solid #e8e8e8',
-                    position: 'fixed',
-                    left: 0,
-                    bottom: 0,
-                    width: '100%',
-
-                    textAlign: 'center',
-                    display: 'flex'
+                    display: 'flex',
+                    boxShadow: '0 0 10px rgb(0 0 0 / 20%)'
                     }
                 }>
                <Image preview={false} style={ {height: '100%'}} width={50} src={product.images[0]}/>
@@ -113,6 +104,7 @@ export const ProductPage: React.FC<Product> = (product: Product) => {
                         
                     }} >Adicionar ao carrinho</button>
             </Footer>
+            
         </Row>
 
     )

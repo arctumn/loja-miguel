@@ -16,20 +16,20 @@ Pode:
 
 import 'antd/dist/antd.css';
 import '../index.css';
-import { Layout, Menu, Breadcrumb, Avatar, Badge } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
+import { Layout, Menu,  Avatar, Badge } from 'antd';
+import { UserOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from '../logo.svg';
 import PublicHomepage from './PublicHomepage';
-import { setConstantValue } from 'typescript';
+//import { setConstantValue } from 'typescript';
 import { ProductPage } from './ItemLayout';
 import { example_product } from '../example_data/example_Data';
 import React from 'react';
 import CatalogLayout from './CatalogLayout';
-import { Product_view } from './Products-view';
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+//import { Product_view } from './Products-view';
+//const { SubMenu } = Menu;
+const { Header, Footer} = Layout;
 
-const rightStyle = { position: 'absolute', top: 0, right: 0 };
+//const rightStyle = { position: 'absolute', top: 0, right: 0 };
 
 
 interface Props {
