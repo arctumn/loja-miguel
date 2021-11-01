@@ -69,7 +69,7 @@ class LayoutPublic extends React.Component<Props, State> {
 
         return (
 
-            <Layout>
+            <Layout style= {{height:'100%'}}>
                 <Header className="header">
                     <div className="logo" />
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
@@ -102,8 +102,8 @@ class LayoutPublic extends React.Component<Props, State> {
                 </Header>
 
                 {content}
-       
-                <Footer style={{ textAlign: 'center' }}> Loja Miguel 2021 </Footer>
+     
+                <Footer style={{ textAlign: 'center', marginTop:'auto'}}> Loja Miguel 2021 </Footer>
             </Layout>
         )
     };

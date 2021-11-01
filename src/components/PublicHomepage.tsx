@@ -9,7 +9,7 @@ import banner4 from '../example_data/img/banner4.jpg';
 import { Content } from 'antd/lib/layout/layout';
 
 const contentStyle = {
-  height: '750px',
+  height: '60vh',
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',

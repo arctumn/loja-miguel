@@ -1,0 +1,23 @@
+
+.product-info{
+    text-align: left;
+}
+.moovable-footer{
+    visibility: visible;  
+}
+.footer-button {
+    margin-left: 60%;
+}
+@media only screen and (min-width: 900px) {
+    [class*="footer-button"]{
+        margin-left: 70%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    [class*="product-info"]{
+        text-align: center;
+    }
+    [class*="moovable-footer"]{
+        visibility: hidden;
+    }
+}
